@@ -19,7 +19,8 @@ sky:
     password: 123456
     database: 10
 
+
   wechat:
     appid:　touristappid
-    secret:
+    secret: 84311df9199ecacdf4f12d27b6b9522d
 
