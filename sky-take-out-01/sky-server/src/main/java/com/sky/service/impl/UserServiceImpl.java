@@ -24,7 +24,7 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
 
     //微信服务接口地址
-    public static final String WX_LOGIN ="http://api.weixin.qq.com/sns/jscode2session";
+    public static final String WX_LOGIN ="https://api.weixin.qq.com/sns/jscode2session";
 
     @Autowired
     private WeChatProperties weChatProperties;
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
         //如果是新用户，自动完成注册 自己封装一个user对象保存到用户表中
         if(user == null){
             //构造器构建方式
-            User.builder()
+            user = User.builder()
                     .openid(openid)
                     .createTime(LocalDateTime.now())
                     .build();
@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
         String json =HttpClientUtil.doGet(WX_LOGIN,map);
 
         JSONObject jsonObject= JSON.parseObject(json);
-        String openid = jsonObject.getString("openId");
+        String openid = jsonObject.getString("openid");
 
         return openid;
     }

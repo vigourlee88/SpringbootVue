@@ -18,7 +18,6 @@ import com.sky.result.PageResult;
 import com.sky.service.SetmealService;
 import com.sky.vo.DishItemVO;
 import com.sky.vo.SetmealVO;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +29,6 @@ import java.util.List;
  * 套餐业务实现
  */
 @Service
-@Slf4j
 public class SetmealServiceImpl implements SetmealService {
 
     @Autowired
