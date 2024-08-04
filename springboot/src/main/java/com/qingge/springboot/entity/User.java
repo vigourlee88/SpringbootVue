@@ -24,12 +24,13 @@ import lombok.ToString;
 @TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
 @ToString
+
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
       @ApiModelProperty("id")
-        @TableId(value = "id", type = IdType.AUTO)
+      @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
 
       @ApiModelProperty("用户名")
